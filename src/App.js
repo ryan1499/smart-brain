@@ -88,7 +88,7 @@ class App extends Component {
 
   onPictureSubmit = () => {
     this.setState({imageUrl: this.state.input, box: {}})
-    fetch('https://smart-brain-ryanc.herokuapp.com/imageurl', {
+    fetch('https://smart-brain-api-ryanc.herokuapp.com/imageurl', {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -98,7 +98,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://smart-brain-ryanc.herokuapp.com/image', {
+          fetch('https://smart-brain-api-ryanc.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
